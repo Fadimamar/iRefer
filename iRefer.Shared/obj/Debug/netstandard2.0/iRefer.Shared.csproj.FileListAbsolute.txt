@@ -1,0 +1,9 @@
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.deps.json
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.dll
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.pdb
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csprojAssemblyReference.cache
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.AssemblyInfoInputs.cache
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.AssemblyInfo.cs
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csproj.CoreCompileInputs.cache
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.dll
+C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.pdb
