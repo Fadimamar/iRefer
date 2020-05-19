@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Plans\AddPlan.razor" />
+    <Content Remove="Pages\Plans\EditPlan.razor" />
+    <Content Remove="Pages\Plans\Plans.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.2.0-preview1.20073.1" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.2.0-preview1.20073.1" PrivateAssets="all" />
@@ -19,6 +25,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iRefer.Shared\iRefer.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Plans\" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mdSkMRZyDsfZnVCIaLROIhrDkEKVjCiubADP1Mpfx0UL3Ty9Mv53WcnAYkmYRMHGXjbOOtpXsYIP8HhVO8Kf8g==",
+  "dgSpecHash": "u4GvZh/vgqNgJ5Onb6eYng5E2nRIiEpIkeV+B+IWYWq8vvaQ8Mt7+acJoYgbm3XA2vCzqqK+7wrtelzTYuBQ6Q==",
   "success": true,
-  "projectFilePath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\iRefer.Client.csproj",
+  "projectFilePath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\iRefer.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fmamar\\.nuget\\packages\\aksoftware.webapi\\3.0.1\\aksoftware.webapi.3.0.1.nupkg.sha512",
     "C:\\Users\\fmamar\\.nuget\\packages\\blazored.localstorage\\2.1.1\\blazored.localstorage.2.1.1.nupkg.sha512",

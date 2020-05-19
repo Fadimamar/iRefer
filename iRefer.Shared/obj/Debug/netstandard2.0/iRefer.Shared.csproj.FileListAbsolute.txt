@@ -7,3 +7,12 @@ C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.
 C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csproj.CoreCompileInputs.cache
 C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.dll
 C:\Workspaces\plannerapp_blazor-master\src\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.pdb
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.deps.json
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.dll
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\bin\Debug\netstandard2.0\iRefer.Shared.pdb
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csprojAssemblyReference.cache
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csproj.CoreCompileInputs.cache
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.AssemblyInfoInputs.cache
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.AssemblyInfo.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.dll
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.pdb

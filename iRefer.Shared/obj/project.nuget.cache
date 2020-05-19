@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NIzNkvthdMalVhSDNEVjp1ZaGQQt/C4D3TaCk7WIsK1GG9eHDRWGzdW4BrH3hFDk0Uq4R/mWZz8ousVygH8o3Q==",
+  "dgSpecHash": "ATqyeyI/ZnSt6ThwKICfVBk85K56yWG96M3QfxfT/6Pl8iXMjo6yeWwbAm80vB8l1m90Wmdy08b+Hi5Q7f6F1g==",
   "success": true,
-  "projectFilePath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj",
+  "projectFilePath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fmamar\\.nuget\\packages\\aksoftware.webapi\\3.0.1\\aksoftware.webapi.3.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

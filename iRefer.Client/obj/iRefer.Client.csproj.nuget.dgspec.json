@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\iRefer.Client.csproj": {}
+    "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\iRefer.Client.csproj": {}
   },
   "projects": {
-    "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\iRefer.Client.csproj": {
+    "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\iRefer.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\iRefer.Client.csproj",
+        "projectUniqueName": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\iRefer.Client.csproj",
         "projectName": "iRefer.Client",
-        "projectPath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\iRefer.Client.csproj",
+        "projectPath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\iRefer.Client.csproj",
         "packagesPath": "C:\\Users\\fmamar\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Client\\obj\\",
+        "outputPath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -28,13 +28,14 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://artifacts.senegence.com:8081/nuget": {}
+          "https://artifacts.senegence.com:8081/nuget": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj": {
-                "projectPath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj"
+              "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj": {
+                "projectPath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj"
               }
             }
           }
@@ -98,18 +99,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015135\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj": {
+    "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj",
         "projectName": "iRefer.Shared",
-        "projectPath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\iRefer.Shared.csproj",
+        "projectPath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\iRefer.Shared.csproj",
         "packagesPath": "C:\\Users\\fmamar\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspaces\\plannerapp_blazor-master\\src\\iRefer.Shared\\obj\\",
+        "outputPath": "C:\\Users\\fmamar\\source\\repos\\iRefer2\\iRefer.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -126,7 +127,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://artifacts.senegence.com:8081/nuget": {}
+          "https://artifacts.senegence.com:8081/nuget": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -167,7 +169,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015135\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
