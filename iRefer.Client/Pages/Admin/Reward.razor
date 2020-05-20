@@ -1,0 +1,73 @@
+﻿@page "/Admin/friendoffer"
+@attribute [Authorize(Roles = "AgencyAdmin, SysAdmin")]
+
+@using Radzen
+@using Radzen.Blazor
+<RadzenContent Container="main">
+    <ChildContent>
+        <RadzenHeading Size="H1" Text="Rewards">
+        </RadzenHeading>
+        <RadzenSteps style="height: 453px">
+            <Steps>
+                <RadzenStepsItem Selected="false" Text="Select Reward Type">
+                    <ChildContent>
+                        <RadzenRadioButtonList Orientation="Orientation.Vertical" Name="Radiobuttonlist0" TValue="dynamic">
+                            <Items>
+                                <RadzenRadioButtonListItem Text="Coupon" Value="0" TValue="dynamic">
+                                </RadzenRadioButtonListItem>
+                                <RadzenRadioButtonListItem Text="Points" Value="1" TValue="dynamic">
+                                </RadzenRadioButtonListItem>
+                                <RadzenRadioButtonListItem Text="Cash" Value="2" TValue="dynamic">
+                                </RadzenRadioButtonListItem>
+                                <RadzenRadioButtonListItem Text="Custom" Value="3" TValue="dynamic">
+                                </RadzenRadioButtonListItem>
+                            </Items>
+                        </RadzenRadioButtonList>
+                    </ChildContent>
+                </RadzenStepsItem>
+                <RadzenStepsItem Selected="true" Text="Configure Reward">
+                    <ChildContent>
+                        <RadzenCard>
+                            <ChildContent>
+                                <RadzenTemplateForm TItem="dynamic">
+                                    <ChildContent>
+                                        <div style="margin-bottom: 1rem" class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom: 1rem" class="row">
+                                            <div class="col-md-3">
+                                                <RadzenLabel Component="textBox1" style="width: 100%" Text="Label1">
+                                                </RadzenLabel>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <RadzenTextBox style="display: block; width: 100%" Name="Textbox0">
+                                                </RadzenTextBox>
+                                                <RadzenRequiredValidator Component="TextBox1" style="position: absolute" Text="textBox1 is required">
+                                                </RadzenRequiredValidator>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-sm-3 col-md-9">
+                                                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                                                </RadzenButton>
+                                            </div>
+                                        </div>
+                                    </ChildContent>
+                                </RadzenTemplateForm>
+                            </ChildContent>
+                        </RadzenCard>
+                        <RadzenCard>
+                        </RadzenCard>
+                        <RadzenCard>
+                        </RadzenCard>
+                        <RadzenCard>
+                        </RadzenCard>
+                    </ChildContent>
+                </RadzenStepsItem>
+            </Steps>
+        </RadzenSteps>
+    </ChildContent>
+</RadzenContent>

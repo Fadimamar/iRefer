@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 
 namespace iRefer.Client
 {
@@ -13,11 +14,15 @@ namespace iRefer.Client
     {
 
         private readonly ILocalStorageService _storageService;
+        
 
         public LocalAuthenticationStateProvider(ILocalStorageService storageService)
         {
-            _storageService = storageService; 
+            _storageService = storageService;
+          
         }
+
+       
 
         public async override Task<AuthenticationState> GetAuthenticationStateAsync()
         {
@@ -25,13 +30,18 @@ namespace iRefer.Client
             {
                 var userInfo = await _storageService.GetItemAsync<LocalUserInfo>("User");
 
+                
+
                 var claims = new[]
                 {
+                    
                     new Claim("Email", userInfo.Email),
                     new Claim("FirstName", userInfo.FirstName),
                     new Claim("LastName", userInfo.LastName),
                     new Claim("AccessToken", userInfo.AccessToken),
                     new Claim(ClaimTypes.NameIdentifier, userInfo.Id),
+                    new Claim(ClaimTypes.Role,userInfo.Role)
+                    
                 };
 
                 var identity = new ClaimsIdentity(claims, "BearerToken");

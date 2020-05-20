@@ -144,3 +144,7 @@ C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razo
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\Auth\ForgotPassword.razor.g.cs
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Auth\ResetPassword.razor.g.cs
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\Auth\ResetPassword.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Admin\Config.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\Admin\Config.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Admin\Reward.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\Admin\Reward.razor.g.cs

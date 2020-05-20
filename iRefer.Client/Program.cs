@@ -13,8 +13,8 @@ namespace iRefer.Client
 {
     public class Program
     {
-       //private const string URL = "https://localhost:44344";
-       private const string URL = "https://plannerappserver20200228091432.azurewebsites.net";
+       private const string URL = "https://localhost:44344";
+      // private const string URL = "https://plannerappserver20200228091432.azurewebsites.net";
 
         public static async Task Main(string[] args)
         {
@@ -41,6 +41,7 @@ namespace iRefer.Client
             builder.Services.AddOptions();
             builder.Services.AddAuthorizationCore();
             builder.Services.AddScoped<AuthenticationStateProvider, LocalAuthenticationStateProvider>();
+            
 
             builder.RootComponents.Add<App>("app");
 
