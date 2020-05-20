@@ -1,13 +1,25 @@
-﻿
-<div class="top-row pl-4 navbar navbar-dark">
+﻿@*<div class="top-row pl-4 navbar navbar-dark">
     <RadzenLabel Text="iRefer">
-    </RadzenLabel>
+    </RadzenLabel>*@
 
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+@*<button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+    </button>*@
 
+<RadzenHeader>
+    <ChildContent>
+        <div class="row justify-content-start align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+                <RadzenSidebarToggle @onclick="ToggleNavMenu" >
+                </RadzenSidebarToggle>
+                <RadzenLabel Text="iRefer">
+                </RadzenLabel>
+            </div>
+            <div class="col-md-6 text-lg-right">
+            </div>
+        </div>
+    </ChildContent>
+</RadzenHeader>
 <RadzenSidebar>
     <ChildContent>
         <RadzenPanelMenu style="height: 100%">
@@ -117,7 +129,9 @@
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
+
     {
+        
         collapseNavMenu = !collapseNavMenu;
     }
 }

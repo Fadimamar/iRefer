@@ -1,4 +1,4 @@
-﻿@page "/Admin/friendoffer"
+﻿@page "/Admin/Reward"
 @attribute [Authorize(Roles = "AgencyAdmin, SysAdmin")]
 
 @using Radzen
@@ -11,15 +11,15 @@
             <Steps>
                 <RadzenStepsItem Selected="false" Text="Select Reward Type">
                     <ChildContent>
-                        <RadzenRadioButtonList Orientation="Orientation.Vertical" Name="Radiobuttonlist0" TValue="dynamic">
+                        <RadzenRadioButtonList Orientation="Orientation.Vertical" Name="Radiobuttonlist0" TValue="int">
                             <Items>
-                                <RadzenRadioButtonListItem Text="Coupon" Value="0" TValue="dynamic">
+                                <RadzenRadioButtonListItem Text="Coupon" Value="0" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Points" Value="1" TValue="dynamic">
+                                <RadzenRadioButtonListItem Text="Points" Value="1" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Cash" Value="2" TValue="dynamic">
+                                <RadzenRadioButtonListItem Text="Cash" Value="2" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Custom" Value="3" TValue="dynamic">
+                                <RadzenRadioButtonListItem Text="Custom" Value="3"TValue="int">
                                 </RadzenRadioButtonListItem>
                             </Items>
                         </RadzenRadioButtonList>
@@ -29,7 +29,7 @@
                     <ChildContent>
                         <RadzenCard>
                             <ChildContent>
-                                <RadzenTemplateForm TItem="dynamic">
+                                <RadzenTemplateForm TItem="string">
                                     <ChildContent>
                                         <div style="margin-bottom: 1rem" class="row">
                                             <div class="col-md-3">
