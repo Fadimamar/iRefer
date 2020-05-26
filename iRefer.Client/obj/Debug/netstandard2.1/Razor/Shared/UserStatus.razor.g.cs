@@ -59,13 +59,6 @@ using iRefer.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\_Imports.razor"
-using Radzen.Blazor;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 9 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\_Imports.razor"
 using iRefer.Shared.Services;
 
@@ -103,6 +96,20 @@ using Microsoft.AspNetCore.Authorization;
 #nullable restore
 #line 14 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\_Imports.razor"
 using Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\_Imports.razor"
+using Radzen.Blazor;
 
 #line default
 #line hidden

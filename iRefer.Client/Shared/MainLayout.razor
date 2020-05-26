@@ -1,15 +1,144 @@
 ﻿@inherits LayoutComponentBase
+    <div class="sidebar">
+            <NavMenu />
+        </div>
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+        <div class="main">
+            <div class="top-row px-4">
+                <UserStatus />
+            </div>
 
-<div class="main">
-    <div class="top-row px-4">
-        <UserStatus />
-    </div>
+            <div class="content px-4">
+                @Body
+            </div>
+        </div>
+@*@inherits iRefer.Client.Shared.MainLayoutComponent
+@using Radzen
+@using Radzen.Blazor
+<RadzenDialog />
+<RadzenNotification />
 
-    <div class="content px-4">
-        @Body
-    </div>
-</div>
+<RadzenHeader>
+    <ChildContent>
+        <div class="row justify-content-start align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+                <RadzenSidebarToggle Click="@SidebarToggle0Click">
+                </RadzenSidebarToggle>
+                <RadzenLabel Text="iRefer">
+                </RadzenLabel>
+            </div>
+            <div class="col-md-6 text-lg-right">
+            </div>
+        </div>
+    </ChildContent>
+</RadzenHeader>
+<RadzenBody @ref="body0">
+    <ChildContent>
+        <RadzenContentContainer Name="main">
+            @Body
+        </RadzenContentContainer>
+    </ChildContent>
+</RadzenBody>
+<RadzenSidebar @ref="sidebar0">
+    <ChildContent>
+        <RadzenPanelMenu style="height: 100%">
+            <ChildContent>
+                <RadzenPanelMenuItem Icon="home" Path="home" Selected="true" Text="Home">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="account_circle" Text="My Account">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="account_box" Text="Edit My Info.">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="vpn_key" Text="change Password">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="business" Path="configuration" Text="Configuration">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="info" Text="Business Info.">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="redeem" Text="Reward">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="monetization_on" Text="Friend Offer">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="perm_contact_calendar" Text="Members">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="account_balance_wallet" Text="Verify Balance">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="mobile_friendly" Text="Validate Certificate">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="attach_money" Text="Credit Customer">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="loyalty" Text="Redeem Reward">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="file_copy" Text="Reports">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="supervised_user_circle" Text="Prospects">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="contact_mail" Text="Invite">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="contacts" Text="Bulk Invite">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="file_copy" Text="Reports">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="shopping_cart" Text="Shopping Zone">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="store" Text="Browse Catalog">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="money_off" Text="Weekly Discounts">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="bookmarks" Text="Preferred Merchants">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="add_shopping_cart" Text="Registery Lists">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="shop_two" Text="Reports">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="loyalty" Text="Referral Zone">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="contact_mail" Text="Invite Friends">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="youtube_searched_for" Text="Find Rebate Offers">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="assignment" Text="Reports">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="toll" Text="My Rewards">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="account_balance_wallet" Text="Verify Balance">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="redeem" Text="Redeem Reward">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="live_help" Text="Claim Missing Credit">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="history" Text="Reward History">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="build" Text="Settings">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Icon="inbox" Text="Notifications">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Icon="group_work" Text="Affiliation Status">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+            </ChildContent>
+        </RadzenPanelMenu>
+    </ChildContent>
+</RadzenSidebar>
+<RadzenFooter>
+    <ChildContent>
+        <RadzenLabel Text="iRefer, Copyright Ⓒ 2020">
+        </RadzenLabel>
+    </ChildContent>
+</RadzenFooter>*@
+

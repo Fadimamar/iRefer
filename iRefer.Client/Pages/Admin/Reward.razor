@@ -1,73 +1,205 @@
 ﻿@page "/Admin/Reward"
-@attribute [Authorize(Roles = "AgencyAdmin, SysAdmin")]
-
+@*@attribute [Authorize(Roles = "AgencyAdmin, SysAdmin")]*@
+@layout MainLayout
 @using Radzen
 @using Radzen.Blazor
+@using Pages.Admin
+@using System.IO;
+@using QRCoder;
+@using System.Drawing;
+@using System.Drawing.Imaging;
+@inherits iRefer.Client.Pages.Admin.RewardComponent
+
+
 <RadzenContent Container="main">
     <ChildContent>
         <RadzenHeading Size="H1" Text="Rewards">
         </RadzenHeading>
-        <RadzenSteps style="height: 453px">
+        <RadzenSteps style="height: 599px">
             <Steps>
-                <RadzenStepsItem Selected="false" Text="Select Reward Type">
+                <RadzenStepsItem Text="Welcome!">
                     <ChildContent>
-                        <RadzenRadioButtonList Orientation="Orientation.Vertical" Name="Radiobuttonlist0" TValue="int">
+                        <RadzenFieldset Text="Rewards Configuration">
+                            <ChildContent>
+                                <RadzenHeading Size="H3" Text="Welcome to Reward Configuration Wizard!">
+                                </RadzenHeading>
+                                <RadzenHtml>
+                                    <p>This is the place to decide what kind of reward your customer will earn for every referral resulting in a new sale. </p>
+                                    <p>You can choose in the next step the appropriate reward type for your business model and configure Reward parameters on the last step. <br />Obviously, a referral to a Dentist is different than a referral to the hair salon, and purchasing an insurance policy should be treated differently than purchasing a car or a home. Thus, we have provided the flexibility required to match every business needs</p>
+                                    <p>Remember, you can always come back and change your reward type in the future, but you can always have one active reward type at a certain period. </p>
+                                    <h4>Coupon:</h4>
+                                    <p>Every time a new customer purchases a product or service because of a referral, the referring customer will earn a coupon that can be used for their next purchase or service with your business. <br />Please setup on step three Coupon Expiration Date and other descriptions and terms you need to appear on the coupon.  </p>
+
+                                    <h4>Points:</h4>
+                                    <p>Use this option to give points to your customers for a referral. They can accumulate the points and redeem as cash for future purchases or services. <br />You can set up the conversion rate on the last step if you decided to go with a point reward. </p>
+                                    <h4>Cash:</h4>
+                                    <p>For some business models, cash for each referral might be the best option. It is up to you to configure in step 3 what amount you will pay the customer for making a new sale. </p>
+                                    <h4>Custom:</h4>
+                                    <p>If all above options are not sufficient and you still want to do something different, like $100 Visa Gift Card, a trip to Hawaii, or anything you might think of, you can use the custom option to configure your reward </p>
+                                </RadzenHtml>
+                            </ChildContent>
+                        </RadzenFieldset>
+                    </ChildContent>
+                </RadzenStepsItem>
+                <RadzenStepsItem Text="Select Reward Type">
+                    <ChildContent>
+
+                        <RadzenRadioButtonList Orientation="Orientation.Vertical" Name="Radiobuttonlist1" TValue="int" Change="@Radiobuttonlist1Change" @bind-Value="@SelectedOption">
                             <Items>
-                                <RadzenRadioButtonListItem Text="Coupon" Value="0" TValue="int">
+                                <RadzenRadioButtonListItem Text="Coupon" Value="2" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Points" Value="1" TValue="int">
+                                <RadzenRadioButtonListItem Text="Points" Value="4" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Cash" Value="2" TValue="int">
+                                <RadzenRadioButtonListItem Text="Cash" Value="1" TValue="int">
                                 </RadzenRadioButtonListItem>
-                                <RadzenRadioButtonListItem Text="Custom" Value="3"TValue="int">
+                                <RadzenRadioButtonListItem Text="Custom" Value="3" TValue="int">
                                 </RadzenRadioButtonListItem>
                             </Items>
                         </RadzenRadioButtonList>
                     </ChildContent>
+
                 </RadzenStepsItem>
-                <RadzenStepsItem Selected="true" Text="Configure Reward">
+                <RadzenStepsItem Text="Configure the Reward">
                     <ChildContent>
-                        <RadzenCard>
+                        <RadzenCard @bind-Visible=@CouponSelected>
                             <ChildContent>
-                                <RadzenTemplateForm TItem="string">
+                                <RadzenTemplateForm Action="/admin/reward" Method="post" TItem="string">
                                     <ChildContent>
                                         <div style="margin-bottom: 1rem" class="row">
                                             <div class="col-md-3">
+                                                <RadzenLabel Component="textBox1" style="text-align: right; width: 100%" Text="Description">
+                                                </RadzenLabel>
                                             </div>
                                             <div class="col-md-9">
+                                                <RadzenTextBox Placeholder="REF15" style="width: 232px" Name="Textbox0">
+                                                </RadzenTextBox>
                                             </div>
                                         </div>
                                         <div style="margin-bottom: 1rem" class="row">
                                             <div class="col-md-3">
-                                                <RadzenLabel Component="textBox1" style="width: 100%" Text="Label1">
+                                                <RadzenLabel Component="textBox1" style="position: relative; text-align: right; width: 100%" Text="Discount Rate=%">
+                                                </RadzenLabel>
+                                            </div>
+                                            <div class="col-md-9" style="position: relative">
+                                                <RadzenRequiredValidator Component="Textbox1" Popup="false" style="float: none; position: relative; width: 205.125px" Text="Discount Rate is a Required field">
+                                                </RadzenRequiredValidator>
+                                                <RadzenTextBox Placeholder="15" style="display: block; width: 47px" Name="Textbox1">
+                                                </RadzenTextBox>
+                                                <RadzenNumericRangeValidator Component="Textbox1" Max="100" Min="1" Popup="false" Text="Only numbers 1 to 100">
+                                                </RadzenNumericRangeValidator>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom: 1rem" class="row">
+                                            <div class="col-md-3">
+                                                <RadzenLabel Component="textBox1" style="text-align: right; width: 100%" Text="Expires">
                                                 </RadzenLabel>
                                             </div>
                                             <div class="col-md-9">
-                                                <RadzenTextBox style="display: block; width: 100%" Name="Textbox0">
-                                                </RadzenTextBox>
+                                                <RadzenCheckBox style="width: 34px" Name="Checkbox0" TValue="bool">
+                                                </RadzenCheckBox>
                                                 <RadzenRequiredValidator Component="TextBox1" style="position: absolute" Text="textBox1 is required">
                                                 </RadzenRequiredValidator>
+                                                <RadzenDatePicker style="width: 201px" Name="Datepicker0" TValue="DateTime">
+                                                </RadzenDatePicker>
+                                                <RadzenLabel Text="(Uncheck the Expire check box or keep it checked and select expiration date.">
+                                                </RadzenLabel>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="offset-sm-3 col-md-9">
-                                                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save">
-                                                </RadzenButton>
+                                        <div style="margin-bottom: 1rem" class="row">
+                                            <div class="col-md-3">
+                                                <RadzenLabel Component="textBox1" style="text-align: right; width: 100%" Text="Valid when earned plus these number of days days">
+                                                </RadzenLabel>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <RadzenNumericRangeValidator Component="Textbox3" Max="30" Min="1" Text="A number between 1 and 30">
+                                                </RadzenNumericRangeValidator>
+                                                <RadzenTextBox Placeholder="5" style="display: block; width: 43px" Name="Textbox3">
+                                                </RadzenTextBox>
+                                                <RadzenRequiredValidator Component="Textbox3" Text="Review Days is required">
+                                                </RadzenRequiredValidator>
+                                                <RadzenLabel style="width: 566.390625px" Text="Grace period before issuing a Reward to guarantee that new customer’s transaction went through and funds are received.">
+                                                </RadzenLabel>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom: 1rem" class="row">
+                                            <div class="col-md-3">
+                                                <RadzenLabel Component="textBox1" style="text-align: right; width: 100%" Text="Message & Terms">
+                                                </RadzenLabel>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <RadzenTextArea Placeholder="You have earned a 15% discount for referring a friend. Keep referring friends so you and your friends can enjoy discounts. Please make sure to use your coupon before the expiration date. " style="height: 76px; width: 506px" Name="Textarea0">
+                                                </RadzenTextArea>
                                             </div>
                                         </div>
                                     </ChildContent>
                                 </RadzenTemplateForm>
                             </ChildContent>
                         </RadzenCard>
-                        <RadzenCard>
+                        <RadzenCard @bind-Visible=@PointsSelected>
                         </RadzenCard>
-                        <RadzenCard>
+                        <RadzenCard @bind-Visible=@CashSelected>
                         </RadzenCard>
-                        <RadzenCard>
+                        <RadzenCard @bind-Visible=@CustomSelected>
                         </RadzenCard>
                     </ChildContent>
+                </RadzenStepsItem>
+                <RadzenStepsItem Text="Finish">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <RadzenCard style="border-bottom: 1px dashed rgb(33, 37, 41); border-left: 1px dashed rgb(33, 37, 41); border-right: 1px dashed rgb(33, 37, 41); border-top: 1px dashed rgb(33, 37, 41); float: none; height: 500px; position: static; text-align: center; width: 400px">
+                                <div class="coupon">
+                                    <div class="container">
+                                        <h3>Company Logo</h3>
+                                    </div>
+                                    
+                                    <img src="@QRCodeStr" style="width:200px;height:200px;" />
+
+                                    <div class="container" style="background-color:white">
+                                        <h2><b>20% OFF YOUR PURCHASE</b></h2>
+                                        <p>Lorem ipsum..</p>
+                                    </div>
+                                    <div class="container">
+                                        <p>Use Promo Code: <span class="promo">BOH232</span></p>
+                                        <p class="expire">Expires: Jan 03, 2021</p>
+                                    </div>
+                                </div>
+                            </RadzenCard>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <RadzenButton Click="GenerateQRCode" Text="Generate`">
+
+                            </RadzenButton>
+                        </div>
+                    </div>
                 </RadzenStepsItem>
             </Steps>
         </RadzenSteps>
     </ChildContent>
 </RadzenContent>
+@code{
+
+
+    public void GenerateQRCode()
+    {
+
+
+        string CouponID = "Sample Coupon";
+        //if (!string.IsNullOrEmpty(CouponID))
+        //{
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        QRCodeGenerator oQRCodeGenerator = new QRCodeGenerator();
+        //        QRCodeData oQRCodeDate = oQRCodeGenerator.CreateQrCode(CouponID, QRCodeGenerator.ECCLevel.Q);
+        //        QRCode oQRCode = new QRCode(oQRCodeDate);
+        //        using (Bitmap oBitmap = oQRCode.GetGraphic(20))
+        //        {
+        //            oBitmap.Save(ms, ImageFormat.Png);
+        //            QRCodeStr = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+        //        }
+
+        //    }
+        //}
+    }
+
+}

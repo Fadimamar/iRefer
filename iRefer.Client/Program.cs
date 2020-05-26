@@ -7,7 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using iRefer.Shared.Services;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
-using Blazor.FileReader; 
+using Blazor.FileReader;
+using Radzen;
+using Radzen.Blazor;
 
 namespace iRefer.Client
 {
@@ -41,7 +43,9 @@ namespace iRefer.Client
             builder.Services.AddOptions();
             builder.Services.AddAuthorizationCore();
             builder.Services.AddScoped<AuthenticationStateProvider, LocalAuthenticationStateProvider>();
-            
+            builder.Services.AddScoped<DialogService>();
+            builder.Services.AddScoped<NotificationService>();
+
 
             builder.RootComponents.Add<App>("app");
 

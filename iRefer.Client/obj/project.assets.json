@@ -314,6 +314,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "QRCoderNetCore/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/QRCoder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/QRCoder.dll": {}
+        }
+      },
       "Radzen.Blazor/2.2.5": {
         "type": "package",
         "dependencies": {
@@ -358,6 +370,15 @@
         },
         "runtime": {
           "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
       "System.IO/4.3.0": {
@@ -1288,6 +1309,18 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "QRCoderNetCore/1.0.0": {
+      "sha512": "nTQ/vgpaQDn5iT7dDu5euM9bgmV8Ul25ZQwUGg2doh72yhmzyMdpVfQykp/WyuHoKmK2EXYB2+/MRq4e5dpuXw==",
+      "type": "package",
+      "path": "qrcodernetcore/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/QRCoder.dll",
+        "qrcodernetcore.1.0.0.nupkg.sha512",
+        "qrcodernetcore.nuspec"
+      ]
+    },
     "Radzen.Blazor/2.2.5": {
       "sha512": "caCCAaAtFfAji8oSfGeq7mu7DUVyze6tJwYEibnWzImqqpmZlQmnJXtSjqmCHiOuOGe4Kpo01L7jVewptL6hcg==",
       "type": "package",
@@ -1443,6 +1476,39 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.annotations.4.7.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Drawing.Common/4.5.1": {
+      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.1.nupkg.sha512",
+        "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -2216,6 +2282,7 @@
       "Microsoft.AspNetCore.Blazor.DevServer >= 3.2.0-preview1.20073.1",
       "Microsoft.AspNetCore.Blazor.HttpClient >= 3.2.0-preview1.20073.1",
       "Microsoft.AspNetCore.Components.Authorization >= 3.1.2",
+      "QRCoderNetCore >= 1.0.0",
       "Radzen.Blazor >= 2.2.5",
       "Tewr.Blazor.FileReader >= 1.4.0.20072",
       "iRefer.Shared >= 1.0.0"
@@ -2296,6 +2363,10 @@
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
             "version": "[3.1.2, )"
+          },
+          "QRCoderNetCore": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Radzen.Blazor": {
             "target": "Package",
