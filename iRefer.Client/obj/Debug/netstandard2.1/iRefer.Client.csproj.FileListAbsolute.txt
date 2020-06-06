@@ -167,3 +167,5 @@ C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\bin\Debug\netstandard2.1\dist
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\bin\Debug\netstandard2.1\dist\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\bin\Debug\netstandard2.1\dist\_framework\_bin\iRefer.Client.pdb
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\bin\Debug\netstandard2.1\dist\_framework\_bin\System.Linq.Dynamic.Core.pdb
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Admin\EditAgency.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\Admin\EditAgency.razor.g.cs

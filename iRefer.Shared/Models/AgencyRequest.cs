@@ -8,7 +8,7 @@ namespace iRefer.Shared.Models
 {
     public class AgencyRequest
     {
-        public string Id { get; set; }
+       public String Id { get; set; }
         [Required]
         [StringLength(100)]
         public string AgencyName { get; set; }

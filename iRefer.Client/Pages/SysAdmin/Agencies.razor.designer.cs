@@ -48,80 +48,56 @@ namespace iRefer.Client.Pages.SysAdmin
                 }
             }
         }
-        public int? PageNumber { get; set; }
-        public string Query { get; set; }
+     
+       
 
         [CascadingParameter]
         private Task<AuthenticationState> authenticationState { get; set; }
 
-        bool isBusy = false;
-        int totalPages = 1;
-        string selectedAgencyId = string.Empty;
+       
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
+
         {
+            
+          
             await Load();
         }
         protected async System.Threading.Tasks.Task Load()
 
         {
-
-            await getAgenciesAsync();
+                   await getAgenciesAsync();
         }
 
         async Task getAgenciesAsync()
         {
-            isBusy = true;
-            AgenciesResponse result;
+            NotificationService.Notify(NotificationSeverity.Info, "Retreiving Agencies. Please wait..");
             var userState = authenticationState.Result;
             Agencyservice.AccessToken = userState.User.FindFirst("AccessToken").Value;
-            //if (PageNumber == null)
-                //PageNumber = 1;
-            //if (string.IsNullOrWhiteSpace(Query))
-               // result = await Agencyservice.GetAllAgenciesByPageAsync(PageNumber.Value);
-            result = await Agencyservice.GetAllAgenciesAsync();
-            //else
-            //    result = await Agencyservice.SearchAgenciesByPageAsync(Query, PageNumber.Value);
+           
+            var result = await Agencyservice.GetAllAgenciesAsync();
 
-            //if (result.Count % result.PageSize == 0)
-            //    totalPages = result.Count / result.PageSize;
-            //else
-            //    totalPages = (result.Count / result.PageSize) + 1;
-            Agencies = result.Records.ToList();
+            if (result.IsSuccess)
+            {
+                Agencies = result.Records.ToList();
+                NotificationService.Notify(NotificationSeverity.Success, result.Message);
 
-            isBusy = false;
+            }
+            else
+            {
+                NotificationService.Notify(NotificationSeverity.Error, result.Message);
+            }
         }
+
         protected async System.Threading.Tasks.Task Grid0RowSelect(Agency args)
         {
-            //var dialogResult = await DialogService.OpenAsync<EditAgency>("Edit Agency", new Dictionary<string, object>() { { "Id", args.Id } });
-            selectAgency(args.Id);
-            await InvokeAsync(() => { StateHasChanged(); });
+          
+           var dialogResult = await DialogService.OpenAsync<iRefer.Client.Pages.Admin.EditAgency>("Edit Agency", new Dictionary<string, object>() { { "Id", args.Id } });
+                await InvokeAsync(() => { StateHasChanged(); });
+           
         }
-        async Task moveToPageAsync(int pageNumber)
-        {
-            PageNumber = pageNumber;
-            await getAgenciesAsync();
-        }
-        protected void selectAgency(string id)
-        {
-            selectedAgencyId = id;
-        }
-        //async Task deletePlanAsync()
-        //{
-        //    isBusy = true;
-
-        //    var result = await Agencyservice.DeleteAgencyAsync(selectedAgencyId);
-        //    if (result.IsSuccess)
-        //    {
-        //        var deletedAgency = Agencies.SingleOrDefault(p => p.Id == selectedAgencyId);
-        //        Agencies.Remove(deletedAgency);
-        //    }
-        //    else
-        //    {
-        //        await getAgenciesAsync();
-        //    }
-
-        //    isBusy = false;
-        //}
+        
+       
+       
         protected async System.Threading.Tasks.Task GridDeleteButtonClick(MouseEventArgs args, dynamic data)
         {
             try

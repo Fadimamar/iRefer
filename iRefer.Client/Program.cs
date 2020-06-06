@@ -43,10 +43,11 @@ namespace iRefer.Client
             builder.Services.AddOptions();
             builder.Services.AddAuthorizationCore();
             builder.Services.AddScoped<AuthenticationStateProvider, LocalAuthenticationStateProvider>();
+         
             builder.Services.AddScoped<DialogService>();
             builder.Services.AddScoped<NotificationService>();
 
-
+            
             builder.RootComponents.Add<App>("app");
 
             await builder.Build().RunAsync();

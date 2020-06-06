@@ -1,0 +1,115 @@
+﻿@page "/Admin/EditAgency/{Id}"
+@layout MainLayout
+@inherits iRefer.Client.Pages.Admin.EditAgencyComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using iRefer.Shared.Models
+<RadzenContent Container="main">
+    <ChildContent>
+        <div class="row">
+            <div class="col-md-12">
+                <RadzenTemplateForm TItem="iRefer.Shared.Models.Agency" Data="@agency" Visible="@(agency != null)" Submit="@Form0Submit">
+                    <ChildContent>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Id" Component="Id" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="450" style="display: block; width: 100%" @bind-Value="@(agency.Id)" Name="Id">
+                                </RadzenTextBox>
+                                <RadzenRequiredValidator Component="Id" Text="Id is required" style="position: absolute">
+                                </RadzenRequiredValidator>
+                            </div>
+                        </div>
+                       
+                       
+                        
+                        
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Agency Name" Component="AgencyName" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="100" style="display: block; width: 100%" @bind-Value="@(agency.AgencyName)" Name="AgencyName">
+                                </RadzenTextBox>
+                                <RadzenRequiredValidator Component="AgencyName" Text="AgencyName is required" style="position: absolute">
+                                </RadzenRequiredValidator>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Website" Component="Website" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@(agency.Website)" Name="Website">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                                               <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Address 1" Component="Address1" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(agency.Address1)" Name="Address1">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Address 2" Component="Address2" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(agency.Address2)" Name="Address2">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="City" Component="City" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(agency.City)" Name="City">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Zip Code" Component="ZipCode" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="10" style="width: 100%" @bind-Value="@(agency.ZipCode)" Name="ZipCode">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="State" Component="State" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox MaxLength="2" style="width: 100%" @bind-Value="@(agency.State)" Name="State">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                                                <div class="row">
+                            <div class="col offset-sm-3">
+                                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                                </RadzenButton>
+                                <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                                </RadzenButton>
+                            </div>
+                        </div>
+                    </ChildContent>
+                </RadzenTemplateForm>
+            </div>
+        </div>
+    </ChildContent>
+</RadzenContent>

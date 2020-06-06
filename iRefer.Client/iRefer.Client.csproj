@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\Plans\" />
-    <Folder Include="Pages\Admin\" />
     <Folder Include="Pages\Auth\" />
   </ItemGroup>
 
