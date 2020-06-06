@@ -1,22 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-
 using System.ComponentModel.DataAnnotations;
-
+using System.IO;
+using System.Text;
 
 namespace iRefer.Shared.Models
 {
-    public class Agency
+    public class AgencyRequest
     {
-        [Required]
-        public String Id { get; set; }
-        [Required]
-        public String UserId { get; set; }
-        [Required]
-        public DateTime CreatedDate { get; set; }
-        [Required]
-        public DateTime ModifiedDate { get; set; }
+        public string Id { get; set; }
         [Required]
         [StringLength(100)]
         public string AgencyName { get; set; }
@@ -38,12 +30,9 @@ namespace iRefer.Shared.Models
         [StringLength(2)]
         public string State { get; set; }
 
-        [StringLength(256)]
-        public string Logo { get; set; }
 
-        public bool IsDeleted { get; set; }
+        public Stream Logo { get; set; }
 
-
-
+        public string FileName { get; set; }
     }
 }

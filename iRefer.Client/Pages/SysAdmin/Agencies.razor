@@ -1,0 +1,58 @@
+﻿@page "/SysAdmin/agencies"
+@layout MainLayout
+@inherits iRefer.Client.Pages.SysAdmin.AgenciesComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using iRefer.Shared.Models
+<RadzenContent Container="main">
+    <ChildContent>
+        <RadzenHeading Size="H1" Text="Agencies">
+        </RadzenHeading>
+        <div class="row">
+            <div class="col-md-12">
+                @*<RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">*@
+                    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add">
+                    </RadzenButton>
+                    <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@Agencies" TItem="iRefer.Shared.Models.Agency" RowSelect="@Grid0RowSelect">
+                        <Columns>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="Id" Title="Id">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="CreatedDate" FormatString="{0:MM/dd/yyyy}" Title="Created Date">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="ModifiedDate" FormatString="{0:MM/dd/yyyy}" Title="Modified Date">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="UserId" Title="User Id">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="IsDeleted" Title="Is Deleted">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="AgencyName" Title="Agency Name">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="Website" Title="Website">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="PhoneNo" Title="Phone No">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="Address1" Title="Address 1">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="Address2" Title="Address 2">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="City" Title="City">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="ZipCode" Title="Zip Code">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="State" Title="State">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Property="Logo" Title="Logo">
+                            </RadzenGridColumn>
+                            <RadzenGridColumn TItem="iRefer.Shared.Models.Agency" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                                <Template Context="iReferCloudModelsIreferAgency">
+                                    <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, iReferCloudModelsIreferAgency))" @onclick:stopPropagation="true">
+                                    </RadzenButton>
+                                </Template>
+                            </RadzenGridColumn>
+                        </Columns>
+                    </RadzenGrid>
+</div>
+        </div>
+    </ChildContent>
+</RadzenContent>

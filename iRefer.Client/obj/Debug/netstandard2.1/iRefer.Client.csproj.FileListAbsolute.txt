@@ -165,4 +165,5 @@ C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razo
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Shared\UserStatus.razor.g.cs
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\_Imports.razor.g.cs
-C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\bin\Debug\netstandard2.1\dist\_framework\_bin\QRCoder.dll
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\SysAdmin\Agencies.razor.g.cs
+C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\obj\Debug\netstandard2.1\Razor\Pages\SysAdmin\Agencies.razor.g.cs

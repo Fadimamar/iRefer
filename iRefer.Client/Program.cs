@@ -25,13 +25,13 @@ namespace iRefer.Client
             {
                 return new AuthenticationService(URL);
             });
-            builder.Services.AddScoped<PlansService>(s =>
+            builder.Services.AddScoped<AgencyService>(s =>
             {
-                return new PlansService(URL);
+                return new AgencyService(URL);
             });
-            builder.Services.AddScoped<ToDoItemsService>(s =>
+            builder.Services.AddScoped<AgencyRolesService>(s =>
             {
-                return new ToDoItemsService(URL);
+                return new AgencyRolesService(URL);
             });
 
             builder.Services.AddFileReaderService(options =>
