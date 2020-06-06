@@ -11,7 +11,7 @@ namespace iRefer.Shared.Services
     {
         private readonly string _baseUrl;
 
-        ServiceClient client = new ServiceClient();
+       private readonly ServiceClient client = new ServiceClient();
 
         public AgencyService(string url)
         {
@@ -42,9 +42,9 @@ namespace iRefer.Shared.Services
         /// </summary>
        
         /// <returns></returns>
-        public async Task<IEnumerable<Agency>> GetAllAgenciesAsync()
+        public async Task<AgenciesResponse> GetAllAgenciesAsync()
         {
-            var response = await client.GetAsync<IEnumerable<Agency>>($"{_baseUrl}/api/Agencies");
+            var response = await client.GetProtectedAsync<AgenciesResponse> ($"{_baseUrl}/api/Agencies");
             return response.Result;
         }
 

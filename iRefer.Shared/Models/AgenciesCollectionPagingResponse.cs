@@ -9,4 +9,10 @@
         public int? NextPage { get; set; }
         public int Count { get; set; }
     }
+    public class AgenciesResponse : BaseAPIResponse
+    {
+        public Agency[] Records { get; set; }
+
+       
+    }
 }

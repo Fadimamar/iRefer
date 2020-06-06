@@ -15,4 +15,3 @@ C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRef
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.AssemblyInfo.cs
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.dll
 C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.pdb
-C:\Users\fmamar\source\repos\iRefer2\iRefer.Shared\obj\Debug\netstandard2.0\iRefer.Shared.csprojAssemblyReference.cache

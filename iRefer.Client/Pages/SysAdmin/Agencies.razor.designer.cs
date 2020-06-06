@@ -71,20 +71,21 @@ namespace iRefer.Client.Pages.SysAdmin
         async Task getAgenciesAsync()
         {
             isBusy = true;
-            AgenciesCollectionPagingResponse result;
+            AgenciesResponse result;
             var userState = authenticationState.Result;
             Agencyservice.AccessToken = userState.User.FindFirst("AccessToken").Value;
-            if (PageNumber == null)
-                PageNumber = 1;
-            if (string.IsNullOrWhiteSpace(Query))
-                result = await Agencyservice.GetAllAgenciesByPageAsync(PageNumber.Value);
-            else
-                result = await Agencyservice.SearchAgenciesByPageAsync(Query, PageNumber.Value);
+            //if (PageNumber == null)
+                //PageNumber = 1;
+            //if (string.IsNullOrWhiteSpace(Query))
+               // result = await Agencyservice.GetAllAgenciesByPageAsync(PageNumber.Value);
+            result = await Agencyservice.GetAllAgenciesAsync();
+            //else
+            //    result = await Agencyservice.SearchAgenciesByPageAsync(Query, PageNumber.Value);
 
-            if (result.Count % result.PageSize == 0)
-                totalPages = result.Count / result.PageSize;
-            else
-                totalPages = (result.Count / result.PageSize) + 1;
+            //if (result.Count % result.PageSize == 0)
+            //    totalPages = result.Count / result.PageSize;
+            //else
+            //    totalPages = (result.Count / result.PageSize) + 1;
             Agencies = result.Records.ToList();
 
             isBusy = false;

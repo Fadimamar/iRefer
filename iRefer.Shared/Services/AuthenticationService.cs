@@ -12,7 +12,7 @@ namespace iRefer.Shared.Services
 
         private readonly string _baseUrl;
 
-        ServiceClient client = new ServiceClient();
+        private readonly ServiceClient client = new ServiceClient();
 
         public AuthenticationService(string url)
         {
