@@ -70,7 +70,7 @@ namespace iRefer.Client.Pages.SysAdmin
 
         async Task getAgenciesAsync()
         {
-            NotificationService.Notify(NotificationSeverity.Info, "Retreiving Agencies. Please wait..");
+           
             var userState = authenticationState.Result;
             Agencyservice.AccessToken = userState.User.FindFirst("AccessToken").Value;
            

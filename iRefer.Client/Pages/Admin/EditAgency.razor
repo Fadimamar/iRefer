@@ -23,10 +23,10 @@
                                 </RadzenRequiredValidator>
                             </div>
                         </div>
-                       
-                       
-                        
-                        
+
+
+
+
                         <div style="margin-bottom: 1rem" class="row">
                             <div class="col-md-3">
                                 <RadzenLabel Text="Agency Name" Component="AgencyName" style="width: 100%">
@@ -49,7 +49,7 @@
                                 </RadzenTextBox>
                             </div>
                         </div>
-                                               <div style="margin-bottom: 1rem" class="row">
+                        <div style="margin-bottom: 1rem" class="row">
                             <div class="col-md-3">
                                 <RadzenLabel Text="Address 1" Component="Address1" style="width: 100%">
                                 </RadzenLabel>
@@ -99,7 +99,28 @@
                                 </RadzenTextBox>
                             </div>
                         </div>
-                                                <div class="row">
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Select Logo" Component="FileName" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+
+                            <div class="col-md-9">
+                                
+                               
+                                <input type="file" Style="margin:10px;" @ref="inputReference" @onchange="async () => await chooseFileAsync()" />
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel Text="Select Logo" Component="FileName" style="width: 100%">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <img style="width:100%;margin:10px" src="@imageContent" />
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col offset-sm-3">
                                 <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                                 </RadzenButton>
@@ -113,3 +134,6 @@
         </div>
     </ChildContent>
 </RadzenContent>
+@code{
+    
+}

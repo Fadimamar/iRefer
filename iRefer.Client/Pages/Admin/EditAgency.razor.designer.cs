@@ -9,7 +9,9 @@ using Radzen;
 using Radzen.Blazor;
 using iRefer.Shared.Models;
 using iRefer.Shared.Services;
+using Microsoft.AspNetCore.Components.Authorization;
 
+using Blazor.FileReader;
 namespace iRefer.Client.Pages.Admin
 {
     public partial class EditAgencyComponent : ComponentBase
@@ -29,12 +31,24 @@ namespace iRefer.Client.Pages.Admin
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
+         
+
+        [Inject]
+        protected IFileReaderService fileReaderSerivce { get; set; }
+
+        protected  System.IO.Stream fileStream = null;
+        protected  string imageContent = string.Empty;
+        protected string fileName = string.Empty;
+
+
+        public ElementReference inputReference;
         [Inject]
         protected AgencyService Agencyservice { get; set; }
 
         [Parameter]
         public dynamic Id { get; set; }
-
+        [CascadingParameter]
+        private Task<AuthenticationState> authenticationState { get; set; }
         iRefer.Shared.Models.Agency _agency;
         protected iRefer.Shared.Models.Agency agency
         {
@@ -51,6 +65,37 @@ namespace iRefer.Client.Pages.Admin
                 }
             }
         }
+        protected async Task chooseFileAsync()
+        {
+            // Read the file
+            var file = (await fileReaderSerivce.CreateReference(inputReference).EnumerateFilesAsync()).FirstOrDefault();
+
+            // Read the info of the file
+            var fileInfo = await file.ReadFileInfoAsync();
+
+            // Validate the extension
+            string extension = System.IO.Path.GetExtension(fileInfo.Name);
+            var allowedExtensions = new string[] { ".jpg", ".png", ".bmp" };
+
+            if (!allowedExtensions.Contains(extension))
+            {
+                NotificationService.Notify(NotificationSeverity.Error, "The chosen file is not a valid image file");
+               
+                return;
+            }
+            
+
+            // Open the stream
+            using (var memoryStream = await file.CreateMemoryStreamAsync())
+            {
+                // Copy the content to a new stream
+                fileStream = new System.IO.MemoryStream(memoryStream.ToArray());
+                fileName = fileInfo.Name;
+
+                // Show the file in the UI
+                imageContent = $"data:{fileInfo.Type};base64, {Convert.ToBase64String(memoryStream.ToArray())}";
+            }
+        }
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
@@ -61,15 +106,7 @@ namespace iRefer.Client.Pages.Admin
         {
             var ireferGetAgencyByIdResult = await Agencyservice.GetAgencyByIdAsync($"{Id}");
             agency = ireferGetAgencyByIdResult.Record;
-            //agency.Address1 = ireferGetAgencyByIdResult.Record.Address1;
-            //agency.Address2= ireferGetAgencyByIdResult.Record.Address2;
-            //agency.Website = ireferGetAgencyByIdResult.Record.Website;
-            //agency.AgencyName = ireferGetAgencyByIdResult.Record.AgencyName;
-            //agency.PhoneNo = ireferGetAgencyByIdResult.Record.PhoneNo;
-            //agency.City = ireferGetAgencyByIdResult.Record.City;
-            //agency.ZipCode = ireferGetAgencyByIdResult.Record.ZipCode;
-            //agency.Id = ireferGetAgencyByIdResult.Record.Id;
-            //agency.State= ireferGetAgencyByIdResult.Record.State;
+            
             
         }
 
@@ -77,13 +114,24 @@ namespace iRefer.Client.Pages.Admin
         {
             try
             {
-                var agencyRequest = new AgencyRequest { Id = agency.Id, AgencyName = agency.AgencyName, Address1 = agency.Address1, Address2 = agency.Address2, Website = agency.Website, PhoneNo = agency.PhoneNo, State = agency.State, ZipCode = agency.ZipCode };
+                var userState = authenticationState.Result;
+                Agencyservice.AccessToken = userState.User.FindFirst("AccessToken").Value;
+
+                var agencyRequest = new AgencyRequest { Id = agency.Id, AgencyName = agency.AgencyName, Address1 = agency.Address1, Address2 = agency.Address2, Website = agency.Website, PhoneNo = agency.PhoneNo, State = agency.State, ZipCode = agency.ZipCode, Logo = fileStream,FileName = fileName};
                 var ireferUpdateAgencyResult = await Agencyservice.EditAgencyAsync(agencyRequest);
-                DialogService.Close(agency);
+                if (ireferUpdateAgencyResult.IsSuccess)
+                {
+                    DialogService.Close(agency);
+
+                }
+                else
+                {
+                    NotificationService.Notify(NotificationSeverity.Error, ireferUpdateAgencyResult.Message);
+                }
             }
             catch (Exception ireferUpdateAgencyException)
             {
-                NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to update Agency");
+                NotificationService.Notify(NotificationSeverity.Error, $"Error", ireferUpdateAgencyException.Message);
             }
         }
 
