@@ -3,12 +3,13 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Components;
+
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using iRefer.Shared.Models;
 using iRefer.Shared.Services;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 
 using Blazor.FileReader;
@@ -91,6 +92,7 @@ namespace iRefer.Client.Pages.Admin
                 // Copy the content to a new stream
                 fileStream = new System.IO.MemoryStream(memoryStream.ToArray());
                 fileName = fileInfo.Name;
+                NotificationService.Notify(NotificationSeverity.Info, fileName);
 
                 // Show the file in the UI
                 imageContent = $"data:{fileInfo.Type};base64, {Convert.ToBase64String(memoryStream.ToArray())}";
@@ -106,8 +108,10 @@ namespace iRefer.Client.Pages.Admin
         {
             var ireferGetAgencyByIdResult = await Agencyservice.GetAgencyByIdAsync($"{Id}");
             agency = ireferGetAgencyByIdResult.Record;
-            
-            
+            imageContent = ireferGetAgencyByIdResult.Record.Logo;
+
+
+
         }
 
         protected async System.Threading.Tasks.Task Form0Submit(iRefer.Shared.Models.Agency args)
@@ -116,6 +120,7 @@ namespace iRefer.Client.Pages.Admin
             {
                 var userState = authenticationState.Result;
                 Agencyservice.AccessToken = userState.User.FindFirst("AccessToken").Value;
+                agency = args;
 
                 var agencyRequest = new AgencyRequest { Id = agency.Id, AgencyName = agency.AgencyName, Address1 = agency.Address1, Address2 = agency.Address2, Website = agency.Website, PhoneNo = agency.PhoneNo, State = agency.State, ZipCode = agency.ZipCode, Logo = fileStream,FileName = fileName};
                 var ireferUpdateAgencyResult = await Agencyservice.EditAgencyAsync(agencyRequest);
@@ -131,7 +136,7 @@ namespace iRefer.Client.Pages.Admin
             }
             catch (Exception ireferUpdateAgencyException)
             {
-                NotificationService.Notify(NotificationSeverity.Error, $"Error", ireferUpdateAgencyException.Message);
+                NotificationService.Notify(NotificationSeverity.Error, $"Error", ireferUpdateAgencyException.Message, 3000);
             }
         }
 

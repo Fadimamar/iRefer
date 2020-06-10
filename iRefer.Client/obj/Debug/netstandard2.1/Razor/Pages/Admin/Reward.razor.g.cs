@@ -402,7 +402,7 @@ using System.Drawing.Imaging;
                                 __builder6.AddMarkupContent(136, "\r\n                                                ");
                                 __builder6.OpenComponent<Radzen.Blazor.RadzenNumericRangeValidator>(137);
                                 __builder6.AddAttribute(138, "Component", "Textbox1");
-                                __builder6.AddAttribute(139, "Max", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32?>(
+                                __builder6.AddAttribute(139, "Max", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<dynamic>(
 #nullable restore
 #line 88 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\Pages\Admin\Reward.razor"
                                                                                                        100
@@ -411,7 +411,7 @@ using System.Drawing.Imaging;
 #line hidden
 #nullable disable
                                 ));
-                                __builder6.AddAttribute(140, "Min", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32?>(
+                                __builder6.AddAttribute(140, "Min", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<dynamic>(
 #nullable restore
 #line 88 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\Pages\Admin\Reward.razor"
                                                                                                                  1
@@ -498,7 +498,7 @@ using System.Drawing.Imaging;
                                 __builder6.AddMarkupContent(195, "\r\n                                                ");
                                 __builder6.OpenComponent<Radzen.Blazor.RadzenNumericRangeValidator>(196);
                                 __builder6.AddAttribute(197, "Component", "Textbox3");
-                                __builder6.AddAttribute(198, "Max", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32?>(
+                                __builder6.AddAttribute(198, "Max", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<dynamic>(
 #nullable restore
 #line 114 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\Pages\Admin\Reward.razor"
                                                                                                        30
@@ -507,7 +507,7 @@ using System.Drawing.Imaging;
 #line hidden
 #nullable disable
                                 ));
-                                __builder6.AddAttribute(199, "Min", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32?>(
+                                __builder6.AddAttribute(199, "Min", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<dynamic>(
 #nullable restore
 #line 114 "C:\Users\fmamar\source\repos\iRefer2\iRefer.Client\Pages\Admin\Reward.razor"
                                                                                                                 1

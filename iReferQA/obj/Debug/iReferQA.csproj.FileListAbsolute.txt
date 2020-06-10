@@ -1,0 +1,10 @@
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\bin\Debug\iReferQA.exe.config
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\bin\Debug\iReferQA.exe
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\bin\Debug\iReferQA.pdb
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\bin\Debug\WebDriver.dll
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\bin\Debug\WebDriver.xml
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\obj\Debug\iReferQA.csprojAssemblyReference.cache
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\obj\Debug\iReferQA.csproj.CoreCompileInputs.cache
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\obj\Debug\iReferQA.csproj.CopyComplete
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\obj\Debug\iReferQA.exe
+C:\Users\fmamar\source\repos\iRefer2\iReferQA\obj\Debug\iReferQA.pdb

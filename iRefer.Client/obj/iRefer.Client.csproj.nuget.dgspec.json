@@ -51,7 +51,7 @@
           "dependencies": {
             "Blazored.LocalStorage": {
               "target": "Package",
-              "version": "[2.1.1, )"
+              "version": "[2.1.6, )"
             },
             "Microsoft.AspNetCore.Blazor": {
               "target": "Package",
@@ -73,7 +73,7 @@
             },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.5, )"
             },
             "QRCoderNetCore": {
               "target": "Package",
@@ -81,11 +81,11 @@
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[2.2.5, )"
+              "version": "[2.10.0, )"
             },
             "Tewr.Blazor.FileReader": {
               "target": "Package",
-              "version": "[1.4.0.20072, )"
+              "version": "[1.5.0.20109, )"
             }
           },
           "imports": [

@@ -5,10 +5,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace iRefer.Shared.Services
 {
     public class AgencyService
     {
+        
+
         private readonly string _baseUrl;
 
        private readonly ServiceClient client = new ServiceClient();
@@ -91,13 +94,14 @@ namespace iRefer.Shared.Services
 
             };
 
-            if (model.Logo != null)
+            if (model.Logo != null && model.FileName!=null)
                 formKeyValues.Add(new FileFormKeyValue("Logo", model.Logo, model.FileName));
 
             var response = await client.SendFormProtectedAsync<AgencySingleResponse>($"{_baseUrl}/api/Agencies", ActionType.POST, formKeyValues.ToArray());
 
             return response.Result; 
         }
+       
 
         /// <summary>
         /// Edit a plan to the API
@@ -116,12 +120,14 @@ namespace iRefer.Shared.Services
                 new StringFormKeyValue("ZipCode", model.ZipCode),
                 new StringFormKeyValue("Website", model.Website),
                 new StringFormKeyValue("PhoneNo", model.PhoneNo),
+                new StringFormKeyValue("AgencyName", model.AgencyName)
 
             };
 
 
             if (model.Logo != null)
                 formKeyValues.Add(new FileFormKeyValue("Logo", model.Logo, model.FileName));
+            
 
             var response = await client.SendFormProtectedAsync<AgencySingleResponse>($"{_baseUrl}/api/Agencies", ActionType.PUT, formKeyValues.ToArray());
 
